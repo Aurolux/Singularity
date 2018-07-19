@@ -1326,7 +1326,6 @@ const commands = {
 			`- <a href="https://github.com/Aurolux/Pokemon-Showdown">Server source code</a><br />`
 		);
 	},
-	},
 	opensourcehelp: [
 		`/opensource - Links to PS's source code repository.`,
 		`!opensource - Show everyone that information. Requires: + % @ * # & ~`,
