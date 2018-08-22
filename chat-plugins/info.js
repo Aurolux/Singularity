@@ -1238,10 +1238,8 @@ const commands = {
 	/*********************************************************
 	 * Informational commands
 	 *********************************************************/
-
 	'!uptime': true,
 	uptime: function (target, room, user) {
-		if (!this.can('broadcast')) return false;
 		if (!this.runBroadcast()) return;
 		let uptime = process.uptime();
 		let uptimeText;
@@ -1322,8 +1320,8 @@ const commands = {
 		if (!this.runBroadcast()) return;
 		this.sendReplyBox(
 			`- Language: JavaScript (Node.js)<br />` +
-			`- <a href="https://github.com/Aurolux/Pokemon-Showdown/commits/master">What's new?</a><br />` +
-			`- <a href="https://github.com/Aurolux/Pokemon-Showdown">Server source code</a><br />`
+			`- <a href="https://github.com/Aurolux/Singularity/commits/master">What's new?</a><br />` +
+			`- <a href="https://github.com/Aurolux/Singularity">Server source code</a><br />`
 		);
 	},
 	opensourcehelp: [
@@ -1331,17 +1329,17 @@ const commands = {
 		`!opensource - Show everyone that information. Requires: + % @ * # & ~`,
 	],
 
-	'!staff': true,
-	staff: function (target, room, user) {
+		'!development': true,
+	dev: 'development',
+	contribute: 'development',
+	development: function (target, room, user) {
 		if (!this.runBroadcast()) return;
-		this.sendReplyBox(`<a href="https://www.smogon.com/sim/staff_list">Pok&eacute;mon Showdown Staff List</a>`);
-	},
-
-	'!forums': true,
-	forums: function (target, room, user) {
-		if (!this.runBroadcast()) return;
-		this.sendReplyBox(`<a href="https://www.smogon.com/forums/forums/209/">Pok&eacute;mon Showdown Forums</a>`);
-	},
+		this.sendReplyBox(
+			`- Want to contribute to Singularity? Make a <strong>Pull Request</strong>!<br />` +
+			`- <a href="https://github.com/Aurolux/Singularity">Singularity's GitHub repository</a><br />` +
+			`- Discussion is best suited for <a href="http://singularity.psim.us/dev"Development</a>.<br />`
+		)
+	}
 
 	'!privacypolicy': true,
 	privacypolicy: function (target, room, user) {
@@ -1357,23 +1355,22 @@ const commands = {
 	'!suggestions': true,
 	suggestions: function (target, room, user) {
 		if (!this.runBroadcast()) return;
-		this.sendReplyBox(`<a href="https://www.smogon.com/forums/threads/3534365/">Make a suggestion for Pok&eacute;mon Showdown</a>`);
+		this.sendReplyBox(`<a href="https://scienceps.weebly.com/suggestions.html">Make a suggestion for Singularity</a>`);
 	},
 
+
+/***************************************
+Bugs command WIP
 	'!bugs': true,
 	bugreport: 'bugs',
 	bugs: function (target, room, user) {
 		if (!this.runBroadcast()) return;
-		if (room && room.battle) {
-			this.sendReplyBox(`<center><button name="saveReplay"><i class="fa fa-upload"></i> Save Replay</button> &mdash; <a href="https://www.smogon.com/forums/threads/3520646/">Questions</a> &mdash; <a href="https://www.smogon.com/forums/threads/3634749/">Bug Reports</a></center>`);
-		} else {
-			this.sendReplyBox(
-				`Have a replay showcasing a bug on Pok&eacute;mon Showdown?<br />` +
-				`- <a href="https://www.smogon.com/forums/threads/3520646/">Questions</a><br />` +
-				`- <a href="https://www.smogon.com/forums/threads/3634749/">Bug Reports</a> (ask in <a href="/help">Help</a> before posting in the thread if you're unsure)`
-			);
+		this.sendReplyBox(
+			`Find a bug on Singularity?"` +
+		);
 		}
 	},
+***************************************/
 
 	'!avatars': true,
 	avatars: function (target, room, user) {
