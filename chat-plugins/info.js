@@ -17,7 +17,18 @@
 
 /** @type {ChatCommands} */
 const commands = {
-
+	
+	news: function (target, room, user) {
+		if (target) {
+			if (!this.can('addfaq')) return false;
+			room.newsbox = (target);
+			room.chatRoomData.newsbox = (target);
+			this.sendReplyBox(`<div> The newsbox has been updated to: <br />` + room.newsbox + `</div>`);
+		} else if ((!room.chatRoomData.newsbox) && this.runBroadcast()) {
+			this.sendReply('There are no announcements.');
+		} else if (this.runBroadcast()) this.sendReplyBox(`<div>` + room.chatRoomData.newsbox + `</div>`);
+	},
+	
 	'!whois': true,
 	ip: 'whois',
 	rooms: 'whois',
