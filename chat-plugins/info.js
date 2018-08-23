@@ -1337,11 +1337,11 @@ const commands = {
 		this.sendReplyBox(
 			`- Want to contribute to Singularity? Make a <strong>Pull Request</strong>!<br />` +
 			`- <a href="https://github.com/Aurolux/Singularity">Singularity's GitHub repository</a><br />` +
-			`- Discussion is best suited for <a href="http://singularity.psim.us/dev"Development</a>.<br />`
+			`- Discussion is best suited for <a href="http://singularity.psim.us/dev">Development</a>`
 		)
-	}
+	},
 
-	'!privacypolicy': true,
+		'!privacypolicy': true,
 	privacypolicy: function (target, room, user) {
 		if (!this.runBroadcast()) return;
 		this.sendReplyBox(
@@ -1352,7 +1352,7 @@ const commands = {
 		);
 	},
 
-	'!suggestions': true,
+		'!suggestions': true,
 	suggestions: function (target, room, user) {
 		if (!this.runBroadcast()) return;
 		this.sendReplyBox(`<a href="https://scienceps.weebly.com/suggestions.html">Make a suggestion for Singularity</a>`);
