@@ -16,11 +16,12 @@
 /** @typedef {{[k: string]: ChatHandler | string | true | string[]}} ChatCommands */
 
 /** @type {ChatCommands} */
+
 const commands = {
 	
 	news: function (target, room, user) {
 		if (target) {
-			if (!this.can('addfaq')) return false;
+			if (!this.can('editroom', null, room)) return false;
 			room.newsbox = (target);
 			room.chatRoomData.newsbox = (target);
 			this.sendReplyBox(`<div> The newsbox has been updated to: <br />` + room.newsbox + `</div>`);
@@ -28,10 +29,10 @@ const commands = {
 			this.sendReply('There are no announcements.');
 		} else if (this.runBroadcast()) this.sendReplyBox(`<div>` + room.chatRoomData.newsbox + `</div>`);
 	},
-	newshelp: [
-		`/news - Shows room news announcements in a newsbox.`,
-		`/news [text|html] - Updates room news announcements. Requires: # ~`,
-	],	
+	
+	conn: function (room, user, connection) {
+		this.sendReply(connection);
+	},
 	
 	'!whois': true,
 	ip: 'whois',
