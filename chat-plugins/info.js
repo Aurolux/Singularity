@@ -29,10 +29,10 @@ const commands = {
 			this.sendReply('There are no announcements.');
 		} else if (this.runBroadcast()) this.sendReplyBox(`<div>` + room.chatRoomData.newsbox + `</div>`);
 	},
-	
-	conn: function (room, user, connection) {
-		this.sendReply(connection);
-	},
+		newshelp: [
+		`/news - Shows room news announcements in a newsbox.`,
+		`/news [text|html] - Updates room news announcements. Requires: # ~`,
+	],
 	
 	'!whois': true,
 	ip: 'whois',
