@@ -247,6 +247,7 @@ exports.autolockdown = true;
 // displayed in the client.
 exports.customavatars = {
 	'quasistellarbot': 'bot.png'
+	'aurolux': 'porygon.png'
 	//'userid': 'customavatar.png'
 };
 
