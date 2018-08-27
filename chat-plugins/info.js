@@ -20,7 +20,7 @@
 const commands = {
 	
 		img: function (target, room, user) {
-		if (!target) return this.parse('/help img');
+		if (!target) return this.errorReply(`Please include a link`);
 		if (!this.can('declare', null, room)) return false;
 		if (!this.runBroadcast()) return;
 		if (this.room.isPersonal && !this.user.can('announce')) {
