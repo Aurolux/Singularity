@@ -19,32 +19,6 @@
 
 const commands = {
 	
-		img: function (target, room, user) {
-		if (!target) return this.errorReply(`Please include a link`);
-		if (!this.can('declare', null, room)) return false;
-		if (!this.runBroadcast()) return;
-		if (this.room.isPersonal && !this.user.can('announce')) {
-			return this.errorReply(`Images are not allowed in personal rooms.`);
-		}
-
-		if (targets.length !== 1) {
-			// Width and height are required because most browsers insert the
-			// <img> element before width and height are known, and when the
-			// image is loaded, this changes the height of the chat area, which
-			// messes up autoscrolling.
-			return this.errorReply(`Please try this format: /img link`);
-		}
-
-		let image = targets[0].trim();
-		if (!image) return this.errorReply(`No image URL was provided!`);
-		image = this.canEmbedURI(image);
-
-		if (!image) return false;
-
-		
-		this.sendReply(Chat.html`|raw|<img src="${image}" style="width: 50%; height: 50%" />`);
-		}
-	},
 	news: function (target, room, user) {
 		if (target) {
 			if (!this.can('editroom', null, room)) return false;
