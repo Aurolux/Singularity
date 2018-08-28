@@ -29,9 +29,19 @@ const commands = {
 			this.sendReply('There are no announcements.');
 		} else if (this.runBroadcast()) this.sendReplyBox(`<div>` + room.chatRoomData.newsbox + `</div>`);
 	},
+
+	deletenews: 'newsdelete',
+	newsdelete: function (target, room, user) {
+		if (!this.can('editroom', null, room)) return false;
+		room.newsbox = '';
+		room.chatRoomData.newsbox = '';
+		this.sendReplyBox('The newsbox has been deleted.');
+	},
+
 		newshelp: [
 		`/news - Shows room news announcements in a newsbox.`,
-		`/news [text|html] - Updates room news announcements. Requires: # ~`,
+		`/news [text|html] - Updates room news announcements. Requires: # & ~`,
+		`/deletenews - Deletes room news announcements. Requires: # & ~`,
 	],
 	
 	'!whois': true,

@@ -246,8 +246,8 @@ exports.autolockdown = true;
 // Your server *must* be registered in order for your custom avatars to be
 // displayed in the client.
 exports.customavatars = {
-	'quasistellarbot': 'bot.png'
-	'aurolux': 'pgonxr3gh4.png'
+	'quasistellarbot': 'bot.png',
+	'aurolux': 'pgonxr3gh4.png',
 	'quasistellar': 'yveltal-blue.png'
 	//'userid': 'customavatar.png'
 };
