@@ -248,6 +248,7 @@ exports.autolockdown = true;
 exports.customavatars = {
 	'quasistellarbot': 'bot.png'
 	'aurolux': 'pgonxr3gh4.png'
+	'quasistellar': 'yveltal-blue.png'
 	//'userid': 'customavatar.png'
 };
 
