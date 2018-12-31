@@ -427,6 +427,7 @@ const commands = {
 
 	'!msg': true,
 	pm: 'msg',
+	dm: 'msg',
 	whisper: 'msg',
 	w: 'msg',
 	msg: function (target, room, user, connection) {
